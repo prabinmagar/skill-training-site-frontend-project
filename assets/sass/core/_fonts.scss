@@ -1,0 +1,20 @@
+@font-face {
+  @include font-face(Roboto, '#{$base-font-path}/roboto/Roboto-Regular',normal,normal,2.137, Roboto-Regular);
+}
+
+@font-face {
+  @include font-face(Roboto-Bold, '#{$base-font-path}/roboto/Roboto-Bold',normal,normal,2.137, Roboto-Bold);
+}
+
+@font-face {
+  @include font-face('Font Awesome 5 Brands', '#{$fontawesome-path}/fa-brands-400', normal, normal, 5.12.1, 'FontAwesome5Brands-Regular');
+}
+
+@font-face {
+  @include font-face('Font Awesome 5 Regular', '#{$fontawesome-path}/fa-regular-400', normal, normal, 5.12.1, 'FontAwesome5Free-Regular');
+}
+
+@font-face {
+  @include font-face('Font Awesome 5 Solid', '#{$fontawesome-path}/fa-solid-900', normal, normal, 5.12.1, 'FontAwesome5Free-Solid');
+}
+

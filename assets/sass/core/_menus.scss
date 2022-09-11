@@ -1,0 +1,33 @@
+.navbar {
+  &--primary {
+    padding: 0px;
+
+    .navbar-nav{
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+
+      .nav-item{
+
+        .nav-link{
+          @include font-size(14px);
+          font-weight: bold;
+          @include em-calc-size(line-height,14px);
+          @include ttu;
+          @include rem-2Sider(padding,10px,22px);
+          color: rgba(map_get($colors,baseWhite),0.7);
+
+          &:hover,
+          &:focus{
+            color: map_get($colors,baseWhite);
+          }
+
+          &.active{
+            color: map_get($colors,baseWhite);
+          }
+        }
+      }
+    }
+  }
+}

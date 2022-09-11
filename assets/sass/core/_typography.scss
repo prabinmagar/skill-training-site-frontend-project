@@ -1,0 +1,65 @@
+a{
+  display: block;
+  @include font-size(14px);
+  text-decoration: none;
+  @include prefixed(transition-duration, $mediumDuration);
+  @include prefixed(transition-timing-function, ease-out);
+  color: map_get($colors,primary);
+
+  &:hover,
+  &:focus{
+    color: map_get($colors,primary-light);
+    @include prefixed(transition-duration, $mediumDuration);
+    @include prefixed(transition-timing-function, ease-in);
+  }
+}
+
+ol, ul, dl {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+@each $header,
+$size in (h1: 62px, h2: 48px, h3: 36px, h4: 30px, h5: 26px, h6: 18px) {
+  #{$header} {
+    @include font-size($size);
+    font-family  : map_get($fonts, primary-bold);
+    line-height  : 1.4em;
+    color        : map_get($colors, typoHeader);
+    margin-bottom: 0px;
+  }
+}
+
+p {
+  color: map_get($colors, typoText);
+  @include font-size(16px);
+  text-align: justify;
+
+  &.small {
+    @include font-size(14px);
+  }
+
+}
+.list-group--labeled {
+
+  li,
+  .list-group-item {
+    @include em-calc-size(line-height, 24px);
+    background-color: transparent;
+    border          : none;
+    display         : flex;
+    flex-flow       : row wrap;
+
+    label {
+      padding-right: calc(var(--bs-gutter-x) / 2);
+      font-weight  : bold;
+    }
+
+    .btn {
+      @include font-size(14px);
+    }
+  }
+
+
+}

@@ -1,0 +1,199 @@
+.page-footer {
+  @include fw;
+  background-color: map_get($colors, blackMagna);
+  color: map_get($colors, baseWhite);
+
+  &--top {
+    @include fw;
+    @include rem-2Sider(padding, 50px, 0px);
+    color: map_get($colors, baseWhite);
+  }
+
+  &--copyright {
+    @include fw;
+    @include rem-2Sider(padding, 24px, 0px);
+    background-color: map_get($colors, tealishBlue);
+    color: map_get($colors, baseWhite);
+    @include em-calc-size(line-height, 16px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row nowrap;
+    @include font-size(14px);
+
+    a {
+      display: inline-block;
+      @include rem-2Sider(padding,0px,8px);
+    }
+  }
+}
+
+.footer-widget{
+  @include fw;
+  color: map_get($colors,baseWhite);
+
+  .widget {
+    &-header{
+      @include fw;
+      @include rem-size(height,48px);
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+
+      .brand-logo{
+        @include fw;
+        @include transform(skew(0deg));
+        margin: 0px;
+        padding: 0px;
+        background-color: transparent;
+        position: relative;
+        @include rem-size(height,48px);
+
+        img{
+          @include rem-size(height,48px);
+          width: auto;
+        }
+      }
+
+      @each $header in (h1, h2, h3, h4, h5, h6) {
+        #{$header} {
+          color: map_get($colors, baseWhite);
+          @include rem-size(padding-bottom, 0px);
+          @include ttu;
+          @include font-size(18px);
+
+        }
+      }
+    }
+
+    &-body{
+      @include fw;
+      @include rem-size(padding-top,24px);
+      color: map_get($colors,baseWhite);
+
+      @each $header in (h1, h2, h3, h4, h5, h6) {
+        #{$header} {
+          color: map_get($colors, baseWhite);
+          @include rem-size(padding-bottom, 0px);
+          @include ttu;
+          @include font-size(18px);
+
+        }
+      }
+
+      p{
+        color: map_get($colors,baseWhite);
+      }
+
+      .base-form{
+        .input-group{
+          position: relative;
+          .form-control{
+            border: 2px solid map_get($colors,baseWhite);
+            background-color: map_get($colors, blackMagna);
+            color: map_get($colors,baseWhite);
+            @include border-radius(60px !important);
+            @include rem-size(height,44px);
+            @include rem-size(padding-right,48px);
+            width: 100%;
+          }
+
+          .btn{
+            position: absolute;
+            z-index: 550;
+
+            @include rem-size(top,5px);
+            @include rem-size(right,6px);
+          }
+        }
+      }
+    }
+  }
+}
+
+.social-link {
+  &--cirlce {
+    @include fw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row nowrap;
+    @include rem-size(margin-top,24px);
+
+    .list-item{
+      position: relative;
+      @include rem-2Sider(margin,0px,8px);
+
+      .list-link{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: row nowrap;
+        @include rem-sqSize(44px);
+        @include border-radius(100%);
+        position: relative;
+        color: map_get($colors,baseWhite);
+        @include rem-size(padding,6px);
+        @include font-size(20px);
+        @include prefixed(transition-duration, $mediumDuration);
+        @include prefixed(transition-timing-function, ease-out);
+
+        &::after{
+          content: '';
+          position: absolute;
+          border: 2px solid map_get($colors,baseWhite);
+          @include border-radius(100%);
+          top: 0px;
+          left: 0px;
+          height: 100%;
+          width: 100%;
+          @include prefixed(transition-duration, $mediumDuration);
+          @include prefixed(transition-timing-function, ease-out);
+        }
+
+        &:hover,
+        &:focus{
+          background-color: map_get($colors, bright_turquoise);
+          color: map_get($colors, baseWhite);
+          @include prefixed(transition-duration, $mediumDuration);
+          @include prefixed(transition-timing-function, ease-in);
+          &::after{
+            @include prefixed(transition-duration, $mediumDuration);
+            @include prefixed(transition-timing-function, ease-in);
+            @include transform(scale(1.5));
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.online-pay-option{
+  @include fw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-flow: row nowrap;
+  @include rem-size(margin-top,8px);
+
+  .list-item{
+    position: relative;
+    @include rem-size(margin,4px);
+
+    a{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background-color: map_get($colors,baseWhite);
+      @include border-radius(4px);
+
+      img{
+        @include border-radius(4px);
+        height: 38px;
+        width: auto;
+      }
+    }
+  }
+}

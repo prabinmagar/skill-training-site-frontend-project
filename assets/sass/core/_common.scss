@@ -1,0 +1,212 @@
+%fw {
+  @include fw;
+}
+
+.cmn-fw {
+  @extend %fw;
+}
+
+.section-region {
+  @include fw;
+  @include rem-2Sider(padding, 50px, 0px);
+}
+
+.section-row {
+  @include fw;
+  @include rem-size(padding-bottom, 40px);
+
+  &:last-child {
+    padding-bottom: 0px;
+  }
+}
+
+.section-header {
+  @include fw;
+  @include rem-size(padding-bottom, 48px);
+  background: url("../images/header_badge.webp") no-repeat 50% 100%;
+  position: relative;
+
+  &::after{
+    position: absolute;
+    content: "";
+    left: calc(50% - 15px);
+    bottom: 18px;
+    transform: translateX(-50%);
+    background-color: #76B900;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    margin: 0 5px;
+    animation: ripple 1.5s ease-out infinite;
+  }
+
+  @keyframes ripple {
+    from {
+      opacity: 1;
+      transform: scale(0);
+    }
+    to {
+      opacity: 0;
+      transform: scale(3);
+    }
+  }
+  
+
+
+
+  .header-title {
+    text-align: center;
+    @include rem-size(padding-bottom, 5px) ;
+  }
+
+  p {
+    text-align: center;
+    @include em-calc-size(line-height, 24px);
+    @include rem-size(margin-bottom, 10px);
+  }
+}
+
+.thumb-iconin-list {
+  padding: 0px;
+  position: relative;
+  @include rem-size(margin-left, -12px);
+  @include rem-size(margin-right, -12px);
+
+  .list-item {
+    position: relative;
+    @include rem-2Sider(padding, 16px, 12px);
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    @include font-size(20px);
+    font-weight: bold;
+    color: map_get($colors, baseWhite);
+
+    .list-icon {
+      @include rem-sqSize(64px);
+      border: 2px solid map_get($colors, baseWhite);
+      padding: 8px;
+      background-color: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include font-size(36px);
+      @include border-radius(100%);
+      @include rem-size(margin-right, 16px);
+    }
+
+    .list-text {
+      display: flex;
+      flex-grow: 1;
+    }
+  }
+
+  &.list-2col {
+    display: flex;
+    flex-flow: row wrap;
+
+    .list-item {
+      width: 50%;
+    }
+  }
+}
+
+
+.vr-contentList {
+  @include fw;
+
+  .list-item {
+    @include font-size(16px);
+    color: lighten(map_get($colors, baseBlack), 30%);
+    font-weight: normal;
+    @include em-calc-size(line-height, 24px);
+    position: relative;
+    width: 100%;
+    @include rem-size(padding-top, 8px);
+    @include rem-size(padding-bottom, 8px);
+  }
+
+  .list-title {
+    font-weight: bold;
+    color: map_get($colors, secondary);
+  }
+
+  .strong {
+    font-weight: bold;
+    color: map_get($colors, typoText);
+  }
+}
+
+.no-resize {
+  resize: none;
+}
+
+.arrow-link-list {
+  @include fw;
+  display: flex;
+  flex-flow: column nowrap;
+
+
+  .list {
+    &-item {
+      @include fw;
+      margin: 0px;
+    }
+
+    &-link {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-flow: row nowrap;
+      @include rem-2Sider(padding, 8px, 24px);
+      color: map_get($colors, baseWhite);
+      position: relative;
+
+      &::before {
+        content: '\f105';
+        font-family: map_get($fonts, fa-solid);
+        position: absolute;
+        left: 0px;
+      }
+
+      &:hover,
+      &:focus {
+        color: map_get($colors, bright_turquoise);
+      }
+    }
+  }
+}
+
+.address-list {
+  @include fw;
+  display: flex;
+  flex-flow: column nowrap;
+
+  .list-item {
+    @include fw;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    @include rem-2Sider(margin,8px,0px);
+    position: relative;
+    @include rem-size(padding-left,36px);
+
+    .list-icon {
+      @include rem-size(width, 24px);
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      @include rem-size(margin-right, 12px);
+      @include font-size(18px);
+      @include rem-size(top,2px);
+      position: absolute;left: 0px;
+
+      .fa-map-marker-alt,
+      .fa-phone{
+        @include rem-size(margin-top,3px);
+      }
+    }
+  }
+}

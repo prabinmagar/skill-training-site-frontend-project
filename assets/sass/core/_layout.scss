@@ -1,0 +1,1109 @@
+body {
+  font-family: map_get($fonts, primary);
+  @include font-size(map_get($fonts, base-font-size));
+  line-height: map_get($fonts, base-line-height);
+  color: map_get($colors, typoText);
+  background-color: map_get($colors, baseWhite);
+  @include rem-size(padding, 0px);
+  @include rem-size(padding-top, 85px);
+}
+
+.company-features {
+  @include fw;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  .features {
+    position: relative;
+
+    &:not(:last-child) {
+      &:after {
+        content: '';
+        height: 10px;
+        position: absolute;
+        background: map_get($colors, brightGray);
+        top: 160px;
+        right: -40%;
+        @include transform(rotate(27deg));
+        width: 100%;
+      }
+    }
+
+    &:first-child {
+      &:after {
+        top: 175px;
+        right: -40%;
+
+      }
+
+      .features {
+        &-header {
+          .shade {
+            background-color: map_get($colors, baseWhite);
+            @include box-shadow(0px 0px 44px 51px rgba(map_get($colors, bright_turquoise), 0.5));
+            z-index: -5;
+          }
+        }
+
+        &-icon {
+          color: map_get($colors, bright_turquoise);
+          background-color: map_get($colors, turquoise_light);
+          @include box-shadow(7px 7px 0px 2px rgba(map_get($colors, bright_turquoise), 1));
+        }
+
+        &-body {
+          .features {
+            &-title {
+              color: map_get($colors, bright_turquoise);
+
+
+              &:after {
+                background-color: map_get($colors, bright_turquoise);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &:nth-child(2n) {
+      &:after {
+        top: -25px;
+        right: -50%;
+        @include transform(rotate(-27deg));
+      }
+
+      .features {
+        &-header {
+          .shade {
+            background-color: map_get($colors, baseWhite);
+            @include box-shadow(0px 0px 44px 51px rgba(map_get($colors, majorelle_blue), 0.5));
+            z-index: -5;
+          }
+        }
+
+        &-icon {
+          color: map_get($colors, majorelle_blue);
+          background-color: map_get($colors, majorelle_light);
+          @include box-shadow(7px 7px 0px 2px rgba(map_get($colors, majorelle_blue), 1));
+        }
+
+        &-body {
+          .features {
+            &-title {
+              color: map_get($colors, majorelle_blue);
+
+              &:after {
+                background-color: map_get($colors, majorelle_blue);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &:nth-child(3n) {
+      &:after {
+        top: 160px;
+        right: -50%;
+        @include transform(rotate(27deg));
+      }
+
+      .features {
+        &-header {
+          .shade {
+            background-color: map_get($colors, baseWhite);
+            @include box-shadow(0px 0px 44px 51px rgba(map_get($colors, purple_blue), 0.5));
+            z-index: -5;
+          }
+        }
+
+        &-icon {
+          color: map_get($colors, purple_blue);
+          background-color: map_get($colors, purple_light);
+          @include box-shadow(7px 7px 0px 2px rgba(map_get($colors, purple_blue), 1));
+        }
+
+        &-body {
+          .features {
+            &-title {
+              color: map_get($colors, purple_blue);
+
+              &:after {
+                background-color: map_get($colors, purple_blue);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &:last-child {
+
+      .features {
+        &-header {
+          .shade {
+            background-color: map_get($colors, baseWhite);
+            @include box-shadow(0px 0px 44px 51px rgba(map_get($colors, strawberry_red), 0.5));
+            z-index: -5;
+          }
+        }
+
+        &-icon {
+          color: map_get($colors, strawberry_red);
+          background-color: map_get($colors, strawberry_light);
+          @include box-shadow(7px 7px 0px 2px rgba(map_get($colors, strawberry_red), 1));
+        }
+
+        &-body {
+          .features {
+            &-title {
+              color: map_get($colors, strawberry_red);
+
+              &:after {
+                background-color: map_get($colors, strawberry_red);
+              }
+            }
+          }
+        }
+      }
+    }
+
+
+    &-header {
+      @include fw;
+      display: flex;
+      flex-flow: row wrap;
+      align-items: flex-start;
+      justify-content: center;
+      z-index: 550;
+
+
+      .icon-rotate {
+        transform: rotate(46deg);
+      }
+
+      .shade {
+        @include rem-sqSize(0px);
+        position: absolute;
+        left: 70%;
+        top: 70%;
+        @include transform(translateX(-50%));
+        background-color: map_get($colors, baseWhite);
+        @include box-shadow(0px 0px 44px 51px rgba(0, 196, 255, 0.5));
+        z-index: -5;
+      }
+    }
+
+    &-icon {
+      @include rem-sqSize(146px);
+      background-color: #F2FAFF;
+      @include border-radius(32px);
+      @include transform(skew(-14deg, -17deg));
+      position: relative;
+      @include box-shadow(7px 7px 0px 2px rgba(0, 196, 255, 1));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include font-size(48px);
+    }
+
+    &-body {
+      @include rem-2Sider(padding, 48px, 24px);
+
+      .features {
+        &-title {
+          @include rem-size(padding-bottom, 32px);
+          @include rem-size(margin-bottom, 16px);
+          position: relative;
+
+
+          &:after {
+            content: '';
+            @include rem-size(height, 5px);
+            @include rem-size(width, 135px);
+            position: absolute;
+            @include rem-size(left, 20px);
+            bottom: 0px;
+            background-color: map_get($colors, typoHeader);
+          }
+        }
+      }
+
+      p {
+        @include rem-size(padding-left, 20px);
+        @include rem-size(padding-right, 20px);
+        @include font-size(14px);
+      }
+    }
+
+    &:first-child {
+      .features-header {
+        justify-content: flex-start;
+        @include rem-size(padding-left, 48px);
+      }
+    }
+
+    &:last-child {
+      .features-header {
+        justify-content: flex-end;
+        @include rem-size(padding-right, 48px);
+      }
+    }
+
+    &:nth-child(2n+2) {
+      @include rem-size(margin-top, 200px);
+
+      //.features-header {
+      //  &:after {
+      //    content: '';
+      //    height: 10px;
+      //    position: absolute;
+      //    background: #ff0000;
+      //    top: -20px;
+      //    right: -50%;
+      //    @include transform(rotate(-27deg));
+      //    width: 100%;
+      //  }
+      //}
+    }
+
+    //&:nth-child(3n) {
+    //
+    //
+    //  .features-header {
+    //    &:after {
+    //      content: '';
+    //      height: 10px;
+    //      position: absolute;
+    //      background: #00ff00;
+    //      bottom: -20px;
+    //      right: -50%;
+    //      @include transform(rotate(27deg));
+    //      width: 100%;
+    //    }
+    //  }
+    //}
+
+    &:last-child {
+
+
+      .features-header {
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.grid-5-col {
+  @include fw;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 32px;
+
+}
+
+.course-item {
+  @include fw;
+  display: flex;
+  flex-flow: column nowrap;
+
+  &:hover,
+  &:focus {
+    .btn-silver-circle {
+      background-color: map_get($colors, primary-light);
+
+      &:before {
+        border-color: map_get($colors, primary-light);
+      }
+
+      &:hover,
+      &:focus {
+        background-color: map_get($colors, secondary);
+        color: map_get($colors, baseWhite);
+
+        &:before {
+          border-color: map_get($colors, secondary);
+
+
+        }
+      }
+    }
+  }
+
+  .course {
+    &-icon {
+      color: map_get($colors, baseWhite);
+      @include border-radius(100% 100% 0px 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include font-size(80px);
+    }
+
+    &-body {
+      background-color: map_get($colors, baseWhite);
+      position: relative;
+      background-size: cover;
+      -webkit-clip-path: url(#course-clip-path);
+      clip-path: url(#course-clip-path);
+      @include rem-size(margin-top, -75px);
+      @include border-radius(0px 0px 20px 20px);
+      @include box-shadow(0px 0px 8px 0px rgba(map_get($colors, baseBlack), 0.1));
+
+
+      .body-content {
+        background: map_get($colors, baseWhite);
+        @include rem-size(padding, 24px);
+        @include rem-size(padding-top, 95px);
+        @include border-radius(20px);
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        align-items: center;
+
+
+        @each $header in (h1, h2, h3, h4, h5, h6) {
+          #{$header} {
+            color: map_get($black-shades, typoHeader);
+            @include rem-size(padding, 0px);
+            @include font-size(18px);
+            font-weight: bold;
+            text-align: center;
+            @include ttu;
+          }
+        }
+      }
+    }
+  }
+
+  .svg {
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+
+}
+
+@for $i from 1 through length($randomColor) {
+  .course-item:nth-child(#{length($randomColor)}n+#{$i}) {
+
+    .course {
+      &-icon {
+        background-color: nth($randomColor, $i);
+      }
+    }
+  }
+}
+
+.bg {
+  &-pattern {
+    &--circle-texture {
+      background-image: url("../images/background_img.webp");
+      background-repeat: no-repeat;
+      background-position: 0px 0px;
+      background-size: cover;
+    }
+  }
+
+  &-texture {
+    background-image: url("../images/texture_bg.webp");
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    background-size: cover;
+  }
+
+  &--secondary {
+    background-color: map_get($colors, secondary);
+    color: map_get($colors, baseWhite);
+
+    @each $header in (h1, h2, h3, h4, h5, h6) {
+      #{$header} {
+        color: map_get($colors, baseWhite);
+        @include rem-size(padding-bottom, 8px);
+        @include ttu;
+
+      }
+    }
+
+    p {
+      color: map_get($colors, baseWhite) !important;
+    }
+
+    &.has-bottomAngle {
+      overflow: hidden;
+
+      &:before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-left: 0px solid transparent;
+        border-right: 75px solid transparent;
+        border-bottom: 150px solid map_get($colors, primary-light);
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+      }
+    }
+
+    .base-form {
+      .form-control,
+      .form-select {
+        border: 1px solid map_get($colors, baseWhite);
+        background-color: map_get($colors,secondary);
+        color: map_get($colors,baseWhite);
+        @include font-size(14px);
+
+
+        &::placeholder{
+          color: rgba(map_get($colors,baseWhite),0.7);
+        }
+
+      }
+
+      .form-select{
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+      }
+
+      .btn {
+        &-primary {
+          border: 1px solid rgba(map_get($colors, baseWhite), 0.8);
+          @include ttu;
+          font-weight: $fw-bold;
+        }
+      }
+    }
+  }
+}
+
+.skewed-banners {
+  display: flex;
+  flex-flow: row nowrap;
+  height: 100%;
+  width: 100%;
+
+  .banner-content {
+    display: flex;
+    flex-grow: 1;
+    align-items: flex-start;
+    flex-flow: column nowrap;
+    position: relative;
+    @include rem-4Sider(padding, 80px, 110px, 80px, 80px);
+
+    .content-container {
+      @include fw;
+      height: 100%;
+      color: map_get($colors, baseWhite);
+
+      .sub-title {
+        color: rgba(map_get($colors, baseWhite), 0.7);
+        font-weight: bold;
+        @include ttu;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-flow: row wrap;
+        @include rem-size(padding-bottom, 8px);
+
+        &::after {
+          content: "";
+          width: 130px;
+          border-bottom: 2px solid rgba(map_get($colors, baseWhite), 0.7);
+          margin-left: 1rem;
+        }
+      }
+
+      @each $header in (h1, h2, h3, h4, h5, h6) {
+        #{$header} {
+          color: map_get($colors, baseWhite);
+          @include rem-size(padding-bottom, 8px);
+
+        }
+      }
+
+      p {
+        color: map_get($colors, baseWhite);
+      }
+    }
+  }
+
+  .skew-banner {
+    @include rem-size(width, 600px);
+    @include transform(skew(15deg));
+    display: flex;
+    flex-shrink: 0;
+
+    &::before {
+      content: '';
+      @include rem-size(width, 160px);
+      @include rem-size(height, 24px);
+      position: absolute;
+      background-color: map_get($colors, primary);
+      top: 0px;
+      @include rem-size(right, 4px);
+      z-index: 550;
+      @include transform(skewX(15deg));
+    }
+
+    &::after {
+      content: '';
+      @include rem-size(width, 24px);
+      @include rem-size(height, 160px);
+      position: absolute;
+      background-color: map_get($colors, primary);
+      top: 0px;
+      right: 0px;
+      z-index: 550;
+    }
+
+    .banner-top {
+      position: relative;
+      height: 100%;
+      width: 100%;
+
+      &::before {
+        content: '';
+        @include rem-size(width, 24px);
+        @include rem-size(height, 160px);
+        position: absolute;
+        background-color: map_get($colors, primary);
+        top: 0px;
+        @include rem-size(left, -12px);
+        z-index: 550;
+
+      }
+
+      &::after {
+        content: '';
+        @include rem-size(width, 24px);
+        @include rem-size(height, 160px);
+        position: absolute;
+        background-color: map_get($colors, primary);
+        @include rem-size(left, -48px);
+        @include rem-size(bottom, 80px);
+        z-index: 550;
+
+      }
+    }
+
+
+    .banner-image {
+      object-fit: fill;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      overflow: hidden;
+
+
+      img {
+        @include transform(skewX(-15deg));
+        flex-shrink: 0;
+        min-width: 100%;
+        min-height: 100%
+      }
+
+      &::before {
+        content: '';
+        @include rem-size(width, 160px);
+        @include rem-size(height, 24px);
+        position: absolute;
+        background-color: map_get($colors, primary);
+        bottom: 0px;
+        @include rem-size(left, 0px);
+        z-index: 550;
+        @include transform(skewX(15deg));
+
+      }
+
+      &::after {
+        content: '';
+        @include rem-size(width, 25px);
+        @include rem-size(height, 130px);
+        position: absolute;
+        background-color: map_get($colors, primary);
+        bottom: 0px;
+        @include rem-size(left, 0px);
+        z-index: 550;
+        @include transform(skewX(0deg));
+      }
+
+
+    }
+  }
+}
+
+.skewed-image-block {
+  width: 80%;
+  @include transform(skew(-12deg));
+  display: flex;
+  flex-shrink: 0;
+  border-left: 16px solid map_get($colors, brightGray);
+  overflow: hidden;
+  position: relative;
+
+
+  &::before {
+    content: '';
+    @include rem-size(width, 16px);
+    height: 100%;
+    position: absolute;
+    background-color: map_get($colors, primary);
+    top: 0px;
+    left: 0px;
+    z-index: 550;
+  }
+
+  &::after {
+    content: '';
+    @include rem-size(width, 16px);
+    height: 100%;
+    position: absolute;
+    background-color: map_get($colors, primary);
+    bottom: 0px;
+    right: 0px;
+    z-index: 550;
+  }
+
+  &-image {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: map_get($colors, baseWhite);
+    @include transform(skew(12deg));
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+
+
+    img {
+      min-height: 100%;
+      min-width: 100%;
+      position: relative;
+      flex-shrink: 0;
+      width: auto;
+    }
+  }
+
+}
+
+.left-circle-block {
+  @include fw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-flow: row nowrap;
+
+
+  .circle-thumb {
+    @include rem-sqSize(134px);
+    background-color: map_get($colors, secondary);
+    @include border-radius(100%);
+    @include rem-size(padding, 5px);
+    flex-shrink: 0;
+    z-index: 550;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      @include border-radius(100%);
+    }
+  }
+
+  .block-info {
+    display: flex;
+    flex-grow: 1;
+    flex-flow: column nowrap;
+    @include rem-size(height, 110px);
+    background-color: transparent;
+    width: calc(100% + 40px);
+    margin-left: -40px;
+    position: relative;
+
+    &::after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0px 25px 40px 25px;
+      border-color: transparent transparent darken(map_get($colors, secondary), 15%) darken(map_get($colors, secondary), 15%);
+      //transform: skewX(25deg);
+      position: absolute;
+      right: 7px;
+      top: 0;
+      z-index: -1;
+    }
+
+    .block-header {
+      @include fw;
+      @include rem-size(height, 32px);
+      @include rem-size(padding-right, 40px);
+      background-color: transparent;
+      flex-shrink: 0;
+
+
+      .block-header-content {
+        @include fw;
+        height: 100%;
+        background-color: map_get($colors, secondary);
+        @include rem-size(padding-left, 44px);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        font-weight: bold;
+        color: map_get($colors, baseWhite);
+        @include transform(skewX(-25deg));
+        @include border-radius(0px 0px 10px 0px);
+
+        .header-title {
+          @include transform(skewX(25deg));
+          @include font-size(14px);
+        }
+
+        //&::after{
+        //  content: '';
+        //  width: 0;
+        //  height: 0;
+        //  border-style: solid;
+        //  border-width: 0 25px 40px 25px;
+        //  border-color: transparent transparent red transparent;
+        //}
+      }
+    }
+
+    .block-body {
+      height: 100%;
+      background-color: map_get($colors, brightGray);
+      @include rem-size(margin-top, -20px);
+      @include rem-4Sider(padding, 28px, 12px, 8px, 52px);
+      @include border-radius(0px 20px 20px 0px);
+
+      .vr-contentList {
+
+        .list-item {
+          @include font-size(14px);
+          @include em-calc-size(line-height, 22px);
+          @include rem-size(padding-top, 0px);
+          @include rem-size(padding-bottom, 0px);
+        }
+
+        .list-title {
+          @include rem-size(padding-bottom, 3px);
+          @include font-size(14px);
+        }
+      }
+    }
+  }
+}
+
+.placement-partner {
+  @include fw;
+}
+
+.p-partners {
+  @include fw;
+  @include rem-size(height, 120px);
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    @include rem-size(width, 55px);
+    @include rem-size(height, 5px);
+    position: absolute;
+    background-color: map_get($colors, geyser);
+    top: 0px;
+    left: 0rem;
+    z-index: 550;
+    @include transform(skewX(-55deg));
+    @include prefixed(transition-duration, $mediumDuration);
+    @include prefixed(transition-timing-function, ease-out);
+  }
+
+  &::after {
+    content: '';
+    @include rem-size(width, 5px);
+    @include rem-size(height, 35px);
+    position: absolute;
+    background-color: map_get($colors, geyser);
+    top: 0px;
+    left: 0rem;
+    z-index: 550;
+    @include transform(skewY(-55deg));
+    @include prefixed(transition-duration, $mediumDuration);
+    @include prefixed(transition-timing-function, ease-out);
+
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+    @include rem-size(padding, 20px);
+    width: 100%;
+
+    img {
+      @include rem-size(height, 80px);
+      width: auto;
+    }
+
+    &::before {
+      content: '';
+      @include rem-size(width, 55px);
+      @include rem-size(height, 5px);
+      position: absolute;
+      background-color: map_get($colors, geyser);
+      bottom: 0px;
+      right: 0rem;
+      z-index: 550;
+      @include transform(skewX(-55deg));
+      @include prefixed(transition-duration, $mediumDuration);
+      @include prefixed(transition-timing-function, ease-out);
+    }
+
+    &::after {
+      content: '';
+      @include rem-size(width, 5px);
+      @include rem-size(height, 35px);
+      position: absolute;
+      background-color: map_get($colors, geyser);
+      bottom: 0px;
+      right: 0rem;
+      z-index: 550;
+      @include transform(skewY(-55deg));
+      @include prefixed(transition-duration, $mediumDuration);
+      @include prefixed(transition-timing-function, ease-out);
+
+    }
+  }
+
+  &:hover,
+  &:focus {
+
+    &::before,
+    &::after {
+      background-color: map_get($colors, primary-light);
+      @include prefixed(transition-duration, $mediumDuration);
+      @include prefixed(transition-timing-function, ease-in);
+    }
+
+    a {
+      &::before,
+      &::after {
+        background-color: map_get($colors, primary-light);
+        @include prefixed(transition-duration, $mediumDuration);
+        @include prefixed(transition-timing-function, ease-in);
+      }
+    }
+  }
+}
+
+
+.owl-theme {
+  .owl-dots {
+    .owl-dot {
+      span {
+        background-color: map_get($colors, metalicSilver);
+      }
+
+      &:hover {
+        span {
+          background-color: map_get($colors, primary-light);
+        }
+      }
+
+      &.active {
+        span {
+          background-color: map_get($colors, primary-light);
+          @include rem-size(width, 32px);
+        }
+      }
+    }
+  }
+}
+
+.packman-block {
+  height: 100%;
+  width: 100%;
+
+  .packman-block {
+    &-header {
+      background-color: map_get($colors, primary);
+      @include rem-size(padding, 10px);
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      @include border-radius(100% 100% 100% 0px);
+      @include prefixed(transition-duration, $mediumDuration);
+      @include prefixed(transition-timing-function, ease-in);
+      height: 40%;
+      width: 40%;
+
+      .image-thumb {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        @include border-radius(100% 100% 100% 0px);
+        z-index: 550;
+
+        img {
+          position: relative;
+          max-height: 100%;
+          max-width: 100%;
+          @include border-radius(100% 100% 100% 0px);
+        }
+      }
+    }
+
+    &-body {
+      background-color: map_get($colors, baseWhite);
+      @include box-shadow(0px 0px 6px 2px rgba(map_get($colors, baseBlack), 0.1));
+      @include rem-size(padding, 40px);
+      @include rem-size(padding-top, 60px);
+      @include rem-size(padding-right, 28px);
+      position: absolute;
+      left: 12px;
+      bottom: 12px;
+      @include border-radius(100% 0 100% 100%);
+      height: 70%;
+      width: 70%;
+
+      .block-content {
+        p {
+          margin: 0px;
+          @include font-size(14px);
+          @include em-calc-size(line-height, 20px);
+        }
+
+        &-footer {
+          @include fw;
+          @include rem-size(padding-top, 16px);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-flow: column nowrap;
+
+          .title {
+            @include font-size(14px);
+            font-weight: $fw-bold;
+
+            a {
+              @include font-size(14px);
+              font-weight: $fw-bold;
+              color: map_get($colors, typoHeader);
+
+              &:hover,
+              &:focus {
+                color: map_get($colors, primary);
+              }
+            }
+          }
+
+          .sub-title {
+            @include font-size(12px);
+            font-weight: $fw-bold;
+            color: map_get($colors, metalicSilver);
+          }
+        }
+      }
+    }
+  }
+
+  .circle-outline{
+    border: 2px solid map_get($colors,primary);
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: calc(70% + 24px);
+    width: calc(70% + 24px);
+    @include border-radius(100%);
+    border-right-color: transparent;
+    @include transform(rotate(-35deg));
+    @include prefixed(transition-duration, $mediumDuration);
+    @include prefixed(transition-timing-function, ease-in);
+    z-index: -1;
+
+    .circle-outline-inner{
+      border: 2px solid transparent;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      height: 100%;
+      width: 100%;
+      @include border-radius(100%);
+      @include transform(rotate(35deg));
+
+      &::before{
+        content: '';
+        @include rem-sqSize(16px);
+        @include border-radius(100%);
+        background-color: map_get($colors,primary);
+        position: absolute;
+        left: 57%;
+        @include rem-size(top,-9px);
+        @include prefixed(transition-duration, $mediumDuration);
+        @include prefixed(transition-timing-function, ease-in);
+      }
+
+      &::after{
+        content: '';
+        @include rem-sqSize(16px);
+        @include border-radius(100%);
+        background-color: map_get($colors,primary);
+        position: absolute;
+        @include rem-size(right,-8px);
+        top: 56%;
+        @include prefixed(transition-duration, $mediumDuration);
+        @include prefixed(transition-timing-function, ease-in);
+      }
+    }
+
+
+  }
+
+  &:hover,
+  &:focus{
+    .packman-block {
+      &-header {
+        background-color: map_get($colors, secondary);
+        @include prefixed(transition-duration, $mediumDuration);
+        @include prefixed(transition-timing-function, ease-in);
+      }
+
+
+    }
+
+    .circle-outline{
+      border: 2px solid map_get($colors,secondary);
+      border-right-color: transparent;
+      @include prefixed(transition-duration, $mediumDuration);
+      @include prefixed(transition-timing-function, ease-in);
+
+      .circle-outline-inner{
+
+        &::before{
+          background-color: map_get($colors,secondary);
+          @include prefixed(transition-duration, $mediumDuration);
+          @include prefixed(transition-timing-function, ease-in);
+        }
+
+        &::after{
+          background-color: map_get($colors,secondary);
+          @include prefixed(transition-duration, $mediumDuration);
+          @include prefixed(transition-timing-function, ease-in);
+        }
+      }
+
+
+    }
+  }
+
+}

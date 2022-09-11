@@ -1,0 +1,182 @@
+.page-header{
+  @extend %fw;
+  background-color: map_get($colors,baseWhite);
+  @include rem-size(height,85px);
+  display: flex;
+  flex-flow: row nowrap;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 850;
+
+  &::before{
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-color: map_get($colors,secondary);
+    @include rem-size(height,50px);
+    @include rem-size(width,160px);
+  }
+  &::after{
+    content: '';
+    position: absolute;
+    left: 0px;
+    @include rem-size(top,50px);
+    background-color: map_get($colors,primary);
+    @include rem-size(height,35px);
+    @include rem-size(width,160px);
+  }
+}
+
+.brand-logo{
+  background-color: map_get($colors,secondary);
+  @include rem-size(height,85px);
+  @include rem-size(width,280px);
+  @include rem-size(margin-left,64px);
+  @include transform(skew(40deg));
+  position: relative;
+  z-index: 850;
+
+  &--link{
+    @include rem-size(height,85px);
+    @include rem-size(width,210px);
+    @include rem-size(margin-left,35px);
+    @include transform(skew(-40deg));
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 12px;
+
+    img{
+      @include rem-size(max-width,186px);
+
+
+    }
+
+  }
+}
+
+.header-content{
+  display: flex;
+  flex-grow: 1;
+  flex-flow: column nowrap;
+  height: 85px;
+  @include rem-size(margin-left,-40px);
+
+  &--top{
+    @extend %fw;
+    background-color: map_get($colors,primary);
+    @include rem-size(height,35px);
+    @include rem-size(padding-left,54px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .list-group{
+      background-color: transparent;
+      display: flex;
+      flex-flow: row nowrap;
+
+      .list-group-item{
+        background-color: transparent;
+        border: none;
+        color: map_get($colors,baseWhite);
+        @include font-size(12px);
+        font-weight: $fw-bold;
+
+        i,img{
+          @include rem-size(margin-right,8px);
+        }
+      }
+    }
+
+    .social-link{
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-flow: row nowrap;
+      position: relative;
+      @include rem-2Sider(padding,6px,16px);
+      width: auto;
+
+
+      .list-item{
+        @include font-size(12px);
+        font-weight: bold;
+        @include ttu;
+        color: map_get($colors,baseWhite);
+
+
+        &:not(:first-child){
+          @include rem-size(margin-left,12px);
+        }
+
+        a{
+          @include font-size(20px);
+          color: map_get($colors,baseWhite);
+          display: block;
+          position: relative;
+
+          &:hover,
+          &:focus{
+            color: map_get($colors,highlight-yellow);
+          }
+        }
+      }
+    }
+  }
+  &--navbar{
+    @extend %fw;
+    background-color: map_get($colors,secondary);
+    @include rem-size(height,50px);
+    @include rem-size(padding-left,80px);
+    display: flex;
+    align-items: center;
+
+    .navbar{
+      position: relative;
+      width: 100%;
+    }
+  }
+}
+
+.smart-search{
+  position: relative;
+  .input-group{
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 550;
+    .input-group-text{
+      position: absolute;
+      @include rem-size(left,8px);
+      @include rem-2Sider(padding,10px,8px);
+      background-color: transparent;
+      color: map_get($colors,metalicSilver);
+      border: none;
+      z-index: 550;
+    }
+    .btn{
+      position: absolute;
+      right: 0px;
+      z-index: 550;
+
+    }
+
+    .form-control{
+      background-color: map_get($colors,baseWhite);
+      border-radius: 60px !important;
+      @include rem-size(width,272px);
+      @include rem-2Sider(padding,4px,40px);
+      border: none;
+
+      &:focus,
+      &:active{
+        box-shadow: none;
+      }
+    }
+  }
+}
