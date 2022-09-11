@@ -103,6 +103,10 @@
         var $grid = $('.courses-info-grid').isotope({
             // options
         });
+        $grid.imagesLoaded().progress( function() {
+            $grid.isotope('layout');
+          });
+          
         // filter items on button click
         $('.filter-button-group').on( 'click', 'button', function() {
             var filterValue = $(this).attr('data-filter');
